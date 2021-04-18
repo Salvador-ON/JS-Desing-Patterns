@@ -1,0 +1,15 @@
+// using Object.create as was recommended by ES5 standard
+const car = {
+  noOfWheels: 4,
+  start() {
+    return 'started';
+  },
+  stop() {
+    return 'stopped';
+  },
+};
+
+const myCar = Object.create(car, { owner: { value: 'John' } });
+
+console.log(myCar.__proto__ === car);
+console.log(myCar.start());
